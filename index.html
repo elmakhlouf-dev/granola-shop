@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Granola Bliss — Home</title>
+  <meta name="description" content="Small‑batch Moroccan granola. Free delivery over $40. Naturally crunchy, oven‑baked goodness.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/cart.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">Granola <span>Bliss</span></a>
+  <nav class="nav">
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a class="cart-link" href="cart.html" aria-label="Cart">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.44A1.992 1.992 0 0 0 9 19h10v-2H9.42a.25.25 0 0 1-.22-.37L10 15h7.55a2 2 0 0 0 1.86-1.25l3.58-8.05A1 1 0 0 0 22 4H7z"></path></svg>
+      <span id="cart-count" class="badge">0</span>
+    </a>
+  </nav>
+</header>
+<main class="container">
+<section class="hero">
+  <div class="card">
+    <span class="kicker">New • Oven‑Baked</span>
+    <h1>Granola that actually tastes homemade</h1>
+    <p>Crafted in small batches with Moroccan almonds, dates, argan oil and wildflower honey. No artificial flavors, just good energy.</p>
+    <div class="actions">
+      <a href="shop.html" class="btn">Shop Granola</a>
+      <a href="#how" class="btn" style="background:#0f172a">How we bake</a>
+    </div>
+  </div>
+  <img class="card" src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?q=80&w=1600&auto=format&fit=crop" alt="Granola bowl">
+</section>
+
+<section>
+  <h2>Best Sellers</h2>
+  <div class="grid cols-3" id="best-sellers"></div>
+</section>
+
+<section id="how">
+  <h2>How we bake</h2>
+  <div class="notice">We mix whole rolled oats with cold‑pressed argan oil and local honey, then bake low & slow for extra crunch.</div>
+  <table class="table">
+    <tr><th>Ingredient</th><th>Why</th></tr>
+    <tr><td>Argan oil</td><td>Rich in vitamin E with a subtle nutty aroma</td></tr>
+    <tr><td>Whole oats</td><td>Long‑lasting energy & fiber</td></tr>
+    <tr><td>Dates & honey</td><td>Natural sweetness, no refined sugar</td></tr>
+    <tr><td>Sea salt</td><td>Balances flavors and enhances crunch</td></tr>
+  </table>
+  <p class="center"><a class="btn" href="about.html">Learn more</a></p>
+</section>
+
+<script src="assets/js/products.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded',()=>{
+    const list = document.getElementById('best-sellers');
+    (window.PRODUCTS||[]).forEach(p=>{
+      const el = document.createElement('article'); el.className='card';
+      el.innerHTML = `<img src="${p.image}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p class='muted'>${p.desc}</p>
+        <div class='actions'>
+          <span class='price'>$${p.price.toFixed(2)}</span>
+          <a class='btn' href="product.html?id=${p.id}">View</a>
+        </div>`;
+      list.appendChild(el);
+    });
+  });
+</script>
+</main>
+<footer class="site-footer">
+  <div class="grid">
+    <div>
+      <h4>Granola Bliss</h4>
+      <p>Small‑batch, oven‑baked granola with premium Moroccan ingredients.</p>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <ul>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Follow</h4>
+      <p><a href="#">Instagram</a> · <a href="#">Facebook</a></p>
+    </div>
+  </div>
+  <p class="copy">© 2025 Granola Bliss. All rights reserved.</p>
+</footer>
+<script>document.addEventListener('DOMContentLoaded', window.updateCartCount)</script>
+</body></html>
